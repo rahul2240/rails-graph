@@ -8,7 +8,7 @@ include HTTParty
         a = 1
         stop = 0
         while(stop==0)
-        @link = HTTParty.get('https://api.github.com/users/rahul2240/repos?page='+ a.to_s)
+        @link = HTTParty.get('https://api.github.com/users/kunalvishnoi/repos?page='+ a.to_s)
         if @link.count<30
           stop=1
         end
