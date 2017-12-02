@@ -1,5 +1,2 @@
 
-<% @a.each do |key, value| %>
-  <p>Key:<%= key %> value:
-  <%= value %></p>
-<% end %>
+<%= pie_chart @a.map { |k, v| [k, v] }.to_h %>
