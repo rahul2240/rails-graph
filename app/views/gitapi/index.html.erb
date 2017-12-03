@@ -1,6 +1,20 @@
+<% if !@language %>
+  <%= form_tag root_path, method: 'GET' do %>
+    <%= text_field_tag :username, params[:username] %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>
+<% end %>
 
-<%= pie_chart @a.map { |k, v| [k, v] }.to_h %>
+<% if @language %>
+<div style= 'width: 300px'>
+<%= pie_chart @language.map { |k, v| [k, v] }.to_h%>
+</div>
 
-<%= area_chart @a %>
+<div style= 'width: 300px'>
+<%= area_chart @language %>
+</div>
 
-<img src="http://ghchart.rshah.org/kunalvishnoi" alt="2016rshah's Github chart" />
+
+<img src="http://ghchart.rshah.org/<%= @username %>" alt="Github chart" width='400px;' />
+
+<% end %>
